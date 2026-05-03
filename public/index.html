@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Process Guide</title>
+    <meta name="description" content="Step-by-step guidance for the election process.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Election Process Guide</h1>
+            <p>Your step-by-step assistant for registration, verification, and voting.</p>
+        </header>
+
+        <section class="interaction-area" aria-labelledby="ask-heading">
+            <h2 id="ask-heading">How can I help you vote?</h2>
+            <form id="ask-form">
+                <label for="user-query" class="visually-hidden">Ask about the election process</label>
+                <input type="text" id="user-query" placeholder="e.g., I'm a first time voter, how do I register?" required aria-required="true">
+                <button type="submit" aria-label="Get Guidance">Get Guidance</button>
+            </form>
+            <div id="loading" class="hidden" aria-live="polite">Processing your request...</div>
+        </section>
+
+        <section id="result-area" class="result-area hidden" aria-live="polite" aria-atomic="true">
+            <h2>Guidance</h2>
+            <div class="tags">
+                <span id="user-type-tag" class="tag"></span>
+                <span id="intent-tag" class="tag"></span>
+            </div>
+            
+            <div class="decision-box">
+                <h3>System Decision: <span id="decision-stage"></span></h3>
+                <ul id="decision-steps"></ul>
+                <div id="decision-advice" class="advice-alert"></div>
+            </div>
+
+            <div class="ai-explanation">
+                <h3>Detailed Explanation</h3>
+                <div id="ai-content"></div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
